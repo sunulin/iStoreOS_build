@@ -94,8 +94,13 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 更新 feeds
-      run: cd openwrt && ./scripts/feeds update -a
-
+      run: |
+         cd openwrt && ./scripts/feeds update -a
+         git clone https://github.com/openwrt/packages -b openwrt-23.05 op_packages
+         rm -rf feeds/packages/prometheus-node-exporter-lua
+         cp  -r -f ./op_packages/utils/prometheus-node-exporter-lua ./feeds/packages/prometheus-node-exporter-lua
+         rm -rf ./op_packages
+         
     - name: 安装 feeds
       run: cd openwrt && ./scripts/feeds install -a
 
