@@ -12,8 +12,8 @@
 echo -e "预置Clash内核"
 
 mkdir -p package/luci-app-openclash/root/etc/openclash/core
-core_path="packageluci-app-openclash/root/etc/openclash/core"
-goe_path="packageluci-app-openclash/root/etc/openclash"
+core_path="package/luci-app-openclash/root/etc/openclash/core"
+goe_path="package/luci-app-openclash/root/etc/openclash"
 
 mkdir -p files/usr/share/openclash/ui/yacd
 mkdir -p files/usr/share/openclash/ui/dashboard
@@ -29,9 +29,6 @@ GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/dow
 YACD_META_URL="https://raw.githubusercontent.com/DustinWin/clash-tools/main/Clash-dashboard/Yacd-meta.tar.gz"
 RAZORD_META_URL="https://raw.githubusercontent.com/DustinWin/clash-tools/main/Clash-dashboard/Razord-meta.tar.gz"
 METACUBEXD_META_URL="https://raw.githubusercontent.com/DustinWin/clash-tools/main/Clash-dashboard/metacubexd.tar.gz"
-
-
-
 
 wget -qO- $CLASH_DEV_URL | tar xOvz > $core_path/clash
 wget -qO- $CLASH_TUN_URL | gunzip -c > $core_path/clash_tun
