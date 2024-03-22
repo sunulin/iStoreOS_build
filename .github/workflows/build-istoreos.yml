@@ -48,7 +48,7 @@ jobs:
         echo "------------------------------- 磁盘详情 -------------------------------\n"
         df -Th
 
-    - name: 安装 Go 1.21.1
+    - name: 安装 Go
       uses: actions/setup-go@v3
       with:
         go-version: 'stable'
