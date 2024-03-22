@@ -37,10 +37,10 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 #替换prometheus-node-exporter-lua
-git clone https://github.com/openwrt/packages -b openwrt-23.05 feeds/op_packages
-rm -rf feeds/packages/prometheus-node-exporter-lua
-cp  -r -f ./feeds/op_packages/utils/prometheus-node-exporter-lua ./feeds/packages/utils/prometheus-node-exporter-lua
-rm -rf feeds/op_packages
+#git clone https://github.com/openwrt/packages -b openwrt-23.05 feeds/op_packages
+#rm -rf feeds/packages/prometheus-node-exporter-lua
+#cp  -r -f ./feeds/op_packages/utils/prometheus-node-exporter-lua ./feeds/packages/utils/prometheus-node-exporter-lua
+#rm -rf feeds/op_packages
 
 # 替换golang
 rm -rf feeds/packages/lang/golang
