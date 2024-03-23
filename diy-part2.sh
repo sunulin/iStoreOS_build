@@ -51,14 +51,14 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git clone https://github.com/innmonkey/luci-theme-argon package/luci-theme-argon
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
 
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages  luci-app-bypass
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
+#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages  luci-app-bypass
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
