@@ -4,6 +4,9 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
+      iStoreOS_branch:
+        description: '固件分支 [可选]'
+        default: '23.05'
       ssh:
         description: 'SSH connection to Actions'
         required: false
@@ -13,7 +16,7 @@ on:
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
-  REPO_BRANCH: istoreos-23.05
+  REPO_BRANCH: istoreos-${{ github.event.inputs.iStoreOS_branch }}
   FEEDS_CONF: feeds.conf
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
