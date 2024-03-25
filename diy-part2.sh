@@ -43,22 +43,28 @@ function git_sparse_clone() {
 #rm -rf feeds/op_packages
 
 # 替换golang
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+#rm -rf feeds/packages/lang/golang
+#git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 # 添加额外插件
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git clone https://github.com/innmonkey/luci-theme-argon package/luci-theme-argon
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
+# 添加kiddin9组件
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages lua-maxminddb
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages lua-neturl
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages redsocks2
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages  luci-app-bypass
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser
+# 添加passwall组件
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
-#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
-#git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages  luci-app-bypass
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
@@ -175,4 +181,6 @@ CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Socks_Server=y
 CONFIG_PACKAGE_luci-app-nps=y
 CONFIG_PACKAGE_luci-i18n-nps-zh-cn=y
 
+# filebrowser
+CONFIG_PACKAGE_luci-app-filebrowser
 " >> .config
