@@ -182,5 +182,6 @@ CONFIG_PACKAGE_luci-app-nps=y
 CONFIG_PACKAGE_luci-i18n-nps-zh-cn=y
 
 # filebrowser
-CONFIG_PACKAGE_luci-app-filebrowser
+CONFIG_PACKAGE_luci-app-filebrowser=y
+
 " >> .config
