@@ -39,5 +39,4 @@ wget -qO- $YACD_META_URL | tar xvz -C files/usr/share/openclash/ui/yacd
 wget -qO- $RAZORD_META_URL | tar xvz -C files/usr/share/openclash/ui/dashboard
 wget -qO- $METACUBEXD_META_URL | tar xvz -C files/usr/share/openclash/ui/metacubexd
 
-
 chmod +x $core_path/clash*
