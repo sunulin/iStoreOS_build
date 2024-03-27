@@ -31,24 +31,24 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd
+# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser luci-lib-taskd
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin
 
 # 添加kiddin9 bypass组件
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages lua-maxminddb
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages lua-neturl
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages lua-maxminddb
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages lua-neturl
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages redsocks2
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages  luci-app-bypass
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages  luci-app-bypass
 
 # 添加passwall组件
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
+# git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
+# git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
 
 # 加入OpenClash核心
