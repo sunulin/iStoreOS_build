@@ -46,7 +46,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages redsocks2
 # git_sparse_clone master https://github.com/kiddin9/openwrt-packages  luci-app-bypass
 
 # 添加passwall组件
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
