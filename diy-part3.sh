@@ -6,8 +6,8 @@
 # See /LICENSE for more information.
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
-# Description: OpenWrt DIY script part 2 (After Update feeds)
+# File name: diy-part3.sh
+# Description: OpenWrt DIY script part 3 (After feeds install)
 #
 
 # 修改openwrt登陆地址,把下面的 10.0.0.201 修改成你想要的就可以了
