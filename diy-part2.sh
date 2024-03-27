@@ -6,7 +6,7 @@
 # 删除冲突软件库
 
 rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns,trojan*}
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
 # 替换golang
