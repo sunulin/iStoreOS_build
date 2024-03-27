@@ -11,6 +11,10 @@ rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
 cp -f feeds/kenzok/adguardhome feeds/packages/net/adguardhome
 cp -f feeds/kenzok/smartdns feeds/packages/net/smartdns
+
+# 添加passwall依赖库
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+
 # 替换golang
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
