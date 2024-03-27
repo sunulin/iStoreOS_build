@@ -9,8 +9,8 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns,trojan*}
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
-cp -f feeds/kenzok/adguardhome feeds/packages/net/adguardhome
-cp -f feeds/kenzok/smartdns feeds/packages/net/smartdns
+cp -f feeds/kenzo/adguardhome feeds/packages/net/adguardhome
+cp -f feeds/kenzo/smartdns feeds/packages/net/smartdns
 
 # 添加passwall依赖库
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
