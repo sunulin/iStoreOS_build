@@ -2,7 +2,7 @@
 
 [![iStore使用文档](https://img.shields.io/badge/使用文档-iStore%20OS-brightgreen?style=flat-square)](https://doc.linkease.com/zh/guide/istoreos)  [![固件源码](https://img.shields.io/badge/固件源码-iStoreOS%2023.05-brightgreen.svg?style=flat-square)](https://github.com/istoreos/istoreos)  ![支持设备](https://img.shields.io/badge/支持设备-x86/64-brightgreen.svg?style=flat-square)  [![最新固件下载](https://img.shields.io/github/v/release/qazz-shyper/iStoreOS_build?style=flat-square&label=最新固件下载&color=brightgreen)](../../releases/latest)
 
-全程参考[![innmonkey/AutoBuild-iStoreOS](https://img.shields.io/badge/innmonkey-AutoBuild-iStoreOS-brightgreen?style=flat-square)](https://github.com/innmonkey/AutoBuild-iStoreOS)
+全程参考[![innmonkey/AutoBuild-iStoreOS](https://img.shields.io/badge/innmonkey-AutoBuild%20iStoreOS-brightgreen?style=flat-square)](https://github.com/innmonkey/AutoBuild-iStoreOS)
 
 引用kenok8的![openwrt-packages](https://github.com/kenzok8/openwrt-packages)和![small](https://github.com/kenzok8/small)两个库
 
