@@ -20,8 +20,8 @@ rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
 rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns,trojan*}
 git_sparse_clone master  https://github.com/kenzok8/openwrt-packages adguardhome smartdns
-mv -f package/adguardhome package/feeds/packages/net
-mv -f package/smartdns package/feeds/packages/net
+mv -f adguardhome feeds/packages/net
+mv -f smartdns feeds/packages/net
 
 # 添加passwall依赖库
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages feeds/passwall-packages
