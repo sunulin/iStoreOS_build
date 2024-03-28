@@ -4,7 +4,7 @@
 
 全程参考[![innmonkey/AutoBuild-iStoreOS](https://img.shields.io/badge/innmonkey-AutoBuild%20iStoreOS-brightgreen?style=flat-square)](https://github.com/innmonkey/AutoBuild-iStoreOS)
 
-引用kenok8的![openwrt-packages](https://github.com/kenzok8/openwrt-packages)和![small](https://github.com/kenzok8/small)两个库
+引用kenok8的[![openwrt-packages](https://img.shields.io/badge/kenok8-openwrt%20packages-brightgreen?style=flat-square)](https://github.com/kenzok8/openwrt-packages)和[![small](https://img.shields.io/badge/kenok8-small-brightgreen?style=flat-square)](https://github.com/kenzok8/small)两个库
 
 ## 功能特性
 
