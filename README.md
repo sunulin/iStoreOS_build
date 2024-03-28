@@ -1,7 +1,10 @@
-# iStoreOS 固件 | 定制的麻烦自行 fork 修改
+# iStoreOS 固件 | 自用测试
 
-[![iStore使用文档](https://img.shields.io/badge/使用文档-iStore%20OS-brightgreen?style=flat-square)](https://doc.linkease.com/zh/guide/istoreos)  [![固件源码](https://img.shields.io/badge/固件源码-iStoreOS%2023.05-brightgreen.svg?style=flat-square)](https://github.com/istoreos/istoreos)  ![支持设备](https://img.shields.io/badge/支持设备-x86/64-brightgreen.svg?style=flat-square)  [![最新固件下载](https://img.shields.io/github/v/release/innmonkey/Build-iStoreOS?style=flat-square&label=最新固件下载&color=brightgreen)](../../releases/latest)
+[![iStore使用文档](https://img.shields.io/badge/使用文档-iStore%20OS-brightgreen?style=flat-square)](https://doc.linkease.com/zh/guide/istoreos)  [![固件源码](https://img.shields.io/badge/固件源码-iStoreOS%2023.05-brightgreen.svg?style=flat-square)](https://github.com/istoreos/istoreos)  ![支持设备](https://img.shields.io/badge/支持设备-x86/64-brightgreen.svg?style=flat-square)  [![最新固件下载](https://img.shields.io/github/v/release/qazz-shyper/iStoreOS_build?style=flat-square&label=最新固件下载&color=brightgreen)](../../releases/latest)
 
+全程参考![innmonkey/AutoBuild-iStoreOS](https://github.com/innmonkey/AutoBuild-iStoreOS)
+
+引用kenok8的![openwrt-packages](https://github.com/kenzok8/openwrt-packages)和![small](https://github.com/kenzok8/small)两个库
 
 ## 功能特性
 
@@ -31,7 +34,7 @@
 - 添加 Jellyfin
 
 ## 默认配置
-- IP: `http://192.168.0.2` or `http://iStoreOS.lan/`
+- IP: `http://10.0.0.201` or `http://iStoreOS.lan/`
 - 用户名: `root`
 - 密码: `password`
 - 如果设备只有一个网口，则此网口就是 `LAN` , 如果大于一个网口, 默认第一个网口是 `WAN` 口, 其它都是 `LAN`
