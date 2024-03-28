@@ -5,12 +5,12 @@
 #
 # 删除冲突软件库
 
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns,trojan*}
-rm -rf feeds/third_party/luci-app-LingTiGameAcc
+rm -rf package/feeds/luci/applications/luci-app-mosdns
+rm -rf package/feeds/third_party/luci-app-LingTiGameAcc
 
-cp -f feeds/kenzo/adguardhome feeds/packages/net/adguardhome
-cp -f feeds/kenzo/smartdns feeds/packages/net/smartdns
+rm -rf package/feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns,trojan*}
+cp -f package/feeds/kenzo/adguardhome package/feeds/packages/net/adguardhome
+cp -f package/feeds/kenzo/smartdns package/feeds/packages/net/smartdns
 
 # 添加passwall依赖库
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
