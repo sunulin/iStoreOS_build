@@ -13,8 +13,8 @@ cp -f package/feeds/kenzo/adguardhome package/feeds/packages/net/adguardhome
 cp -f package/feeds/kenzo/smartdns package/feeds/packages/net/smartdns
 
 # 添加passwall依赖库
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/feeds/passwall-packages
 
 # 替换golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang package/feeds/packages/lang/golang
