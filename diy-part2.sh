@@ -7,6 +7,8 @@
 
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
+rm -rf feeds/third_party/qBittorrent-static
+rm -rf feeds/small/shadowsocksr-libev
 
 rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,sing*,smartdns,trojan*}
 rm -rf feeds/packages/utils/v2dat
