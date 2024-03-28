@@ -11,7 +11,7 @@
 #rm -rf feeds/small/shadowsocksr-libev
 
 rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,sing*,smartdns,trojan*}
-rm -rf feeds/packages/utils/v2dat
+#rm -rf feeds/packages/utils/v2dat
 
 #cp -rf feeds/kenzo/adguardhome feeds/packages/net/
 #cp -rf feeds/kenzo/smartdns feeds/packages/net/
@@ -23,7 +23,7 @@ rm -rf feeds/packages/utils/v2dat
 #cp -rf feeds/small/v2ray-core feeds/packages/net/
 #cp -rf feeds/small/sing-box feeds/packages/net/
 # 添加passwall依赖库
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages feeds/passwall-packages
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages feeds/passwall-packages
 
 # 替换golang
 rm -rf feeds/packages/lang/golang
