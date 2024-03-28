@@ -5,8 +5,8 @@
 #
 # 删除冲突软件库
 
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/third_party/luci-app-LingTiGameAcc
+#rm -rf feeds/luci/applications/luci-app-mosdns
+#rm -rf feeds/third_party/luci-app-LingTiGameAcc
 #rm -rf feeds/third_party/qBittorrent-static
 #rm -rf feeds/small/shadowsocksr-libev
 
