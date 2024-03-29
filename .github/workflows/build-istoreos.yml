@@ -129,7 +129,7 @@ jobs:
     - name: 加载自定义配置
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE OPENWRT_PATH/.config
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
         chmod +x $DIY_P3_SH
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_P3_SH
@@ -143,7 +143,7 @@ jobs:
     - name: 下载软件包
       id: package
       run: |
-        cd openwrt
+        cd $OPENWRT_PATH
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
