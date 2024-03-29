@@ -28,7 +28,7 @@ cp -rf feeds/kenzo/smartdns feeds/packages/net/
 git clone https://github.com/coolsnowwolf/packages feeds/lede-package
 cp -rf feeds/lede-package/utils/docker feeds/packages/utils/
 cp -rf feeds/lede-package/utils/v2dat feeds/packages/utils/
-rm -rf /feeds/lede-package
+rm -rf feeds/lede-package
 
 # 替换golang
 rm -rf feeds/packages/lang/golang
