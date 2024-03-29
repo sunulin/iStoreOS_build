@@ -66,7 +66,7 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         echo "status=success" >> ${GITHUB_OUTPUT}
         
-    - name: Combine Disks
+    - name: 磁盘扩容
       uses: easimon/maximize-build-space@master
       with:
         swap-size-mb: 1024
@@ -88,8 +88,9 @@ jobs:
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
 
-    - name: Generate Variables
+    - name: 初始化编译环境
       run: |
+        cp $CONFIG_FILE $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
         make defconfig > /dev/null 2>&1
         SOURCE_REPO="$(echo $REPO_URL | awk -F '/' '{print $(NF)}')"
@@ -173,7 +174,7 @@ jobs:
         name: ${{ env.SOURCE_REPO }}-bin-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.FILE_DATE }}
         path: ${{ env.OPENWRT_PATH }}/bin
 
-    - name: Organize Files
+    - name: 整理固件文件
       id: organize
       if: steps.compile.outputs.status == 'success'
       run: |
@@ -187,7 +188,7 @@ jobs:
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> ${GITHUB_OUTPUT}
 
-    - name: Upload Firmware To Artifact
+    - name: 上传固件目录
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_FIRMWARE != 'true'
       uses: actions/upload-artifact@main
       with:
