@@ -27,6 +27,7 @@ cp -rf feeds/small/v2dat feeds/packages/utils/
 # 替换docker
 git clone https://github.com/coolsnowwolf/packages feeds/lede-package
 cp -rf feeds/lede-package/utils/docker feeds/packages/utils/
+cp -rf feeds/lede-package/utils/docker feeds/packages/
 cp -rf feeds/lede-package/utils/dockerd feeds/packages/utils/
 cp -rf feeds/lede-package/utils/docker-compose feeds/packages/utils/
 #cp -rf feeds/lede-package/utils/v2dat feeds/packages/utils/
