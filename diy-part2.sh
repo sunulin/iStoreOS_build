@@ -11,7 +11,7 @@
 #rm -rf feeds/small/shadowsocksr-libev
 
 rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,sing*,smartdns,trojan*}
-rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/packages/utils/{v2dat,docker}
 
 cp -rf feeds/kenzo/adguardhome feeds/packages/net/
 cp -rf feeds/kenzo/smartdns feeds/packages/net/
@@ -25,8 +25,8 @@ cp -rf feeds/small/v2dat feeds/packages/utils/
 # 添加passwall依赖库
 #git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages feeds/passwall-packages
 # 替换docker
-#git clone https://github.com/coolsnowwolf/packages feeds/lede-package
-#cp -rf feeds/lede-package/utils/docker feeds/packages/utils/
+git clone https://github.com/coolsnowwolf/packages feeds/lede-package
+cp -rf feeds/lede-package/utils/docker feeds/packages/
 #cp -rf feeds/lede-package/utils/v2dat feeds/packages/utils/
 #rm -rf feeds/lede-package
 
