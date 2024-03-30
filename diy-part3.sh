@@ -176,4 +176,7 @@ CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Socks_Server=y
 CONFIG_PACKAGE_luci-app-nps=y
 CONFIG_PACKAGE_luci-i18n-nps-zh-cn=y
 
+# docker
+CONFIG_PACKAGE_luci-app-dockerman=y
+CONFIG_PACKAGE_docker-compose=y
 " >> .config
