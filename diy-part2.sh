@@ -21,7 +21,7 @@ rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
 # 替换golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
