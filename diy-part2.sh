@@ -37,7 +37,9 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-ope
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd
-
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 $GITHUB_WORKSPACE/preset-clash-core.sh
