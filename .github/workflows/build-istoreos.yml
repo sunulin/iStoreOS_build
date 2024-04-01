@@ -57,7 +57,6 @@ jobs:
         echo -e "磁盘数量: $(ls /dev/sd* | grep -v [1-9] | wc -l) \n"
         echo "------------------------------- 磁盘详情 -------------------------------\n"
         df -Th
-
     - name: 安装 Go
       uses: actions/setup-go@v5
       with:
@@ -83,8 +82,8 @@ jobs:
         echo "status=success" >> ${GITHUB_OUTPUT}
         
     - name: 克隆源码
-      working-directory: $GITHUB_WORKSPACE
       run: |
-        df -hT $PWD
+        echo "Free space:"
+        df -h
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        df -hT
+        ls
