@@ -77,14 +77,14 @@ jobs:
         #sudo -E apt-get -y full-upgrade
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
-        sudo mkdir -p /workdir
-        sudo chown ${USER}:${GROUPS} /workdir
+        #sudo mkdir -p /workdir
+        #sudo chown ${USER}:${GROUPS} /workdir
         sudo timedatectl set-timezone "${TZ}"
         echo "status=success" >> ${GITHUB_OUTPUT}
         
     - name: 克隆源码
-      working-directory: /workdir
+      working-directory: $GITHUB_WORKSPACE
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        df -hT
