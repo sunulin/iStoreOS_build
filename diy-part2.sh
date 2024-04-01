@@ -19,6 +19,10 @@ sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 # 移除要替换的包
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
+# 替换golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -37,9 +41,13 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-ope
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd
+
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-bypass lua-maxminddb lua-neturl redsocks2
+
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 $GITHUB_WORKSPACE/preset-clash-core.sh
@@ -93,5 +101,74 @@ CONFIG_PACKAGE_luci-app-aliddns=y
 
 # filebrowser
 CONFIG_PACKAGE_luci-app-filebrowser=y
+
+# 科学上网-passwall
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy is not set
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server is not set
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_GO=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin is not set
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
+
+# 科学上网-passwall2
+CONFIG_PACKAGE_luci-app-passwall2=y
+CONFIG_PACKAGE_luci-app-passwall2_Iptables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall2_Nftables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Brook=y
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Haproxy is not set
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_IPv6_Nat=y
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_NaiveProxy is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Server is not set
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs=y
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_SingBox=y
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_tuic_client=y
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_V2ray_Plugin is not set
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
+
+# 科学上网-bypass
+CONFIG_PACKAGE_lua-maxminddb=y
+CONFIG_PACKAGE_luci-app-bypass=y
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_ShadowsocksR_Libev_Server is not set
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Simple_obfs=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Simple_obfs_server=y
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_V2ray_plugin is not set
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Trojan=y
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_NaiveProxy is not set
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Socks5_Proxy=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Socks_Server=y
+
+# npc
+CONFIG_PACKAGE_luci-app-nps=y
+CONFIG_PACKAGE_luci-i18n-nps-zh-cn=y
 
 " >> .config
