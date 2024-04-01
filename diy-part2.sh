@@ -19,7 +19,9 @@ sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 # 移除要替换的包
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
-# 替换golang
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/utils/v2dat
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
@@ -34,8 +36,8 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+#git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+#git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
