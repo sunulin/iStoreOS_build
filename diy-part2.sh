@@ -11,7 +11,7 @@
 #
 
 # 修改openwrt登陆地址,把下面的 10.0.0.1 修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.0.2/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.201/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把 iStore OS 修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
@@ -21,7 +21,7 @@ rm -rf feeds/third_party/luci-app-LingTiGameAcc
 
 # 替换golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -36,17 +36,17 @@ function git_sparse_clone() {
 # 添加额外插件
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd
 
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
 
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-bypass lua-maxminddb lua-neturl redsocks2
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-bypass lua-maxminddb lua-neturl redsocks2
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
