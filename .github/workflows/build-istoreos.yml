@@ -87,8 +87,11 @@ jobs:
       run: |
         df -hT $GITHUB_WORKSPACE
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        rm -rf openwrt/Makerfile
+        cp -f Makefile openwrt/Makefile
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
+        ls
 
     - name: 初始化编译参数
       run: |
