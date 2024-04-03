@@ -30,8 +30,8 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-echo "添加shadowsocks-libev库"
-git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
+#echo "添加shadowsocks-libev库"
+#git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
