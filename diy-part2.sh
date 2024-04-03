@@ -10,14 +10,28 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# 修改openwrt登陆地址,把下面的 192.168.10.1 修改成你想要的就可以了
-sed -i 's/192.168.100.1/10.0.0.201/g' package/base-files/files/bin/config_generate
+# 修改openwrt登陆地址,把下面的 10.0.0.1 修改成你想要的就可以了
+sed -i 's/192.168.1.1/10.0.0.201/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把 iStore OS 修改你喜欢的就行（不能纯数字或者使用中文）
-# sed -i 's/OpenWrt/iStore OS/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 
 # ttyd 自动登录
 # sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${GITHUB_WORKSPACE}/openwrt/package/feeds/packages/ttyd/files/ttyd.config
+
+# Git稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package
+  cd .. && rm -rf $repodir
+}
+
+# 添加额外插件
+echo "添加shadowsocks-libev库"
+git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
