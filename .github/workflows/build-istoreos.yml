@@ -119,6 +119,7 @@ jobs:
     - name: 更新 feeds
       run: |
         cd $OPENWRT_PATH 
+        git pull
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
