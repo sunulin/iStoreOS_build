@@ -29,11 +29,23 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
+# 删除重复库
+echo "删除重复库..."
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/utils/v2dat
+
 # 添加额外插件
 #echo "添加shadowsocks-libev库"
 #git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
 
+# 添加额外插件
+echo "替换go插件库..."
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+
 # 加入OpenClash核心
+echo "加入OpenClash核心..."
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 $GITHUB_WORKSPACE/preset-clash-core.sh amd64
 
