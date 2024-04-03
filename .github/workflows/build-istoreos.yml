@@ -87,10 +87,11 @@ jobs:
       run: |
         df -hT $GITHUB_WORKSPACE
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        rm -rf openwrt/Index.mk
         rm -rf openwrt/Makerfile
-        cp -f Makefile openwrt/Makefile
+        cp Makefile openwrt/Makefile
         rm -rf openwrt/rules.mk
-        cp -f Makefile openwrt/rules.mk
+        cp Makefile openwrt/rules.mk
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         ls
