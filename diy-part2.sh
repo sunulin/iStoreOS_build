@@ -60,6 +60,28 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # mosdns
 CONFIG_PACKAGE_luci-app-mosdns=y
 
+# pushbot
+CONFIG_PACKAGE_luci-app-pushbot=y
+
+# Jellyfin
+CONFIG_PACKAGE_luci-app-jellyfin=y
+
+# qbittorrent
+CONFIG_PACKAGE_luci-app-qbittorrent=y
+
+# transmission
+CONFIG_PACKAGE_luci-app-transmission=y
+CONFIG_PACKAGE_transmission-web-control=y
+
+# uhttpd
+#CONFIG_PACKAGE_luci-app-uhttpd=y
+
+# 阿里DDNS
+CONFIG_PACKAGE_luci-app-aliddns=y
+
+# filebrowser
+CONFIG_PACKAGE_luci-app-filebrowser=y
+
 # 科学上网-passwall
 CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
@@ -106,6 +128,24 @@ CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_tuic_client=y
 # CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_V2ray_Plugin is not set
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
+
+# 科学上网-bypass
+CONFIG_PACKAGE_lua-maxminddb=y
+CONFIG_PACKAGE_luci-app-bypass=y
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_ShadowsocksR_Libev_Server is not set
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Simple_obfs=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Simple_obfs_server=y
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_V2ray_plugin is not set
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Trojan=y
+# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_NaiveProxy is not set
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Socks5_Proxy=y
+CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Socks_Server=y
 
 # npc
 CONFIG_PACKAGE_luci-app-nps=y
