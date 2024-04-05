@@ -149,7 +149,10 @@ jobs:
       run: |
         chmod +x $DIY_P2_SH_CUSTOMIZE
         cd $OPENWRT_PATH
-        $GITHUB_WORKSPACE/$DIY_P2_SH_CUSTOMIZE   
+        $GITHUB_WORKSPACE/$DIY_P2_SH_CUSTOMIZE
+        git pull
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a -f -p passwall_packages
 
     - name: SSH 连接到 Actions
       uses: P3TERX/ssh2actions@v1.0.0
