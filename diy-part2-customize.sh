@@ -35,6 +35,15 @@ function git_sparse_clone() {
 cp -rf feeds/small/{mosdns,xray*,v2ray*,v2ray*,sing*} feeds/packages/net/
 cp -rf feeds/kenzo/{alist,adguardhome,smartdns} feeds/packages/net/
 
+# 去掉ssr+中shadowsocksr-libev的libopenssl-legacy依赖支持
+sed -i 's/ +libopenssl-legacy//g' feeds/small/shadowsocksr-libev/Makefile
+
+# 固定shadowsocks-rust版本以免编译失败
+# rm -rf feeds/small/shadowsocks-rust
+# wget -P feeds/small/shadowsocks-rust https://github.com/wekingchen/my-file/raw/master/shadowsocks-rust/Makefile
+# rm -rf feeds/passwall_packages/shadowsocks-rust
+# wget -P feeds/passwall_packages/shadowsocks-rust https://github.com/wekingchen/my-file/raw/master/shadowsocks-rust/Makefile
+
 echo "
 # 科学上网-passwall
 CONFIG_PACKAGE_luci-app-passwall=y
