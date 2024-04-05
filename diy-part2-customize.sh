@@ -44,6 +44,12 @@ sed -i 's/ +libopenssl-legacy//g' feeds/small/shadowsocksr-libev/Makefile
 # rm -rf feeds/passwall_packages/shadowsocks-rust
 # wget -P feeds/passwall_packages/shadowsocks-rust https://github.com/wekingchen/my-file/raw/master/shadowsocks-rust/Makefile
 
+替换glib2
+mkdir lede
+git clone https://github.com/coolsnowwolf/packages -b master lede
+cp -rf lede/libs/{glib2,pcre2} packages/libs/
+rm -rf lede
+
 echo "
 # 科学上网-passwall
 CONFIG_PACKAGE_luci-app-passwall=y
