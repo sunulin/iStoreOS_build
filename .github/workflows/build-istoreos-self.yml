@@ -150,10 +150,11 @@ jobs:
         chmod +x $DIY_P2_SH_CUSTOMIZE
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_P2_SH_CUSTOMIZE
-        git pull
-        ./scripts/feeds update -a
         ./scripts/feeds install -a -f -p passwall_packages
-
+        echo "替换golang库..."
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+        
     - name: SSH 连接到 Actions
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
