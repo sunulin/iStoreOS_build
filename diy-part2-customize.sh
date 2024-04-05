@@ -26,7 +26,7 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall_packages
+git clone https://github.com/xiaorouji/openwrt-passwall-packages feeds/passwall_packages
 git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
 git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
