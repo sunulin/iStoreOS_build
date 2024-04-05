@@ -32,8 +32,8 @@ function git_sparse_clone() {
 
 # 删除重复库
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
-cp -rf feeds/small/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns} feeds/packages/net/
-
+cp -rf feeds/small/{alist,mosdns,xray*,v2ray*,v2ray*,sing*} feeds/packages/net/
+cp -rf feeds/kenzo/{adguardhome,smartdns} feeds/packages/net/
 echo "
 # 科学上网-passwall
 CONFIG_PACKAGE_luci-app-passwall=y
