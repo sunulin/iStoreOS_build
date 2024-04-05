@@ -55,7 +55,7 @@ rm -rf lede
 echo "替换prometheus库..."
 mkdir openwrt-packages
 git clone https://github.com/openwrt/packages -b master openwrt-packages
-cp -rf openwrt-packages/utils/{prometheus-*} feeds/packages/utils/
+cp -rf openwrt-packages/utils/prometheus-node-exporter-lua feeds/packages/utils/prometheus-node-exporter-lua
 rm -rf openwrt-packages
 
 echo "
