@@ -134,7 +134,7 @@ jobs:
         cd $OPENWRT_PATH 
         git pull
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        # ./scripts/feeds install -a
         
     - name: 加载自定义配置
       run: |
@@ -161,6 +161,7 @@ jobs:
       id: package
       run: |
         cd $OPENWRT_PATH
+        ./scripts/feeds/install -a
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
