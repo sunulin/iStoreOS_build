@@ -30,6 +30,9 @@ function git_sparse_clone() {
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
+# 删除重复库
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+
 echo "
 # 科学上网-passwall
 CONFIG_PACKAGE_luci-app-passwall=y
