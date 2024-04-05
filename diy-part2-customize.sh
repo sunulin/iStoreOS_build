@@ -31,8 +31,8 @@ function git_sparse_clone() {
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
 # 删除重复库
-# rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
-cp -rf feeds/small/{mosdns,xray*,v2ray*,v2ray*,sing*} feeds/packages/net/
+# rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
+cp -rf feeds/small/{mosdns,xray*,v2ray*,sing*} feeds/packages/net/
 cp -rf feeds/kenzo/{alist,adguardhome,smartdns} feeds/packages/net/
 
 # 去掉ssr+中shadowsocksr-libev的libopenssl-legacy依赖支持
@@ -44,7 +44,7 @@ sed -i 's/ +libopenssl-legacy//g' feeds/small/shadowsocksr-libev/Makefile
 # rm -rf feeds/passwall_packages/shadowsocks-rust
 # wget -P feeds/passwall_packages/shadowsocks-rust https://github.com/wekingchen/my-file/raw/master/shadowsocks-rust/Makefile
 
-替换glib2
+# 替换glib2
 mkdir lede
 git clone https://github.com/coolsnowwolf/packages -b master lede
 cp -rf lede/libs/{glib2,pcre2} feeds/packages/libs/
