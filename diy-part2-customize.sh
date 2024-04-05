@@ -12,8 +12,8 @@
 #
 
 # 替换go库
-# rm -rf feeds/packages/lang/golang
-# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang          
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang          
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -26,9 +26,9 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages feeds/passwall_packages
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages feeds/passwall_packages
+# git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
+# git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall2 luci-app-passwall2
 
 echo "
 # 科学上网-passwall
