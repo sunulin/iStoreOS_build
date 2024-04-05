@@ -47,7 +47,7 @@ sed -i 's/ +libopenssl-legacy//g' feeds/small/shadowsocksr-libev/Makefile
 替换glib2
 mkdir lede
 git clone https://github.com/coolsnowwolf/packages -b master lede
-cp -rf lede/libs/{glib2,pcre2} packages/libs/
+cp -rf lede/libs/{glib2,pcre2} feeds/packages/libs/
 rm -rf lede
 
 echo "
