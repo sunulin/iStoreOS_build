@@ -134,7 +134,7 @@ jobs:
         cd $OPENWRT_PATH 
         git pull
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        ./scripts/feeds install -a -f -p passwall_packages
         
     - name: 加载自定义配置
       run: |
@@ -150,10 +150,6 @@ jobs:
         chmod +x $DIY_P2_SH_CUSTOMIZE
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_P2_SH_CUSTOMIZE
-        ./scripts/feeds install -a -f -p passwall_packages
-        echo "替换golang库..."
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
         
     - name: SSH 连接到 Actions
       uses: P3TERX/ssh2actions@v1.0.0
