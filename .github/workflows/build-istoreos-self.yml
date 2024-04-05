@@ -123,7 +123,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 加载自定义脚本1
-      if: (github.event.inputs.compile_type == 'customize' && (github.event.inputs.compile_type != 'original')
+      if: (github.event.inputs.compile_type == 'customize') && (github.event.inputs.compile_type != 'original')
       run: |
         chmod +x $DIY_P1_SH_CUSTOMIZE
         cd $OPENWRT_PATH
@@ -145,7 +145,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: 加载自定义脚本2
-      if: (github.event.inputs.compile_type == 'customize' && (github.event.inputs.compile_type != 'original')
+      if: (github.event.inputs.compile_type == 'customize') && (github.event.inputs.compile_type != 'original')
       run: |
         chmod +x $DIY_P2_SH_CUSTOMIZE
         cd $OPENWRT_PATH
