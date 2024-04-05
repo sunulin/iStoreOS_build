@@ -7,6 +7,9 @@ on:
       iStoreOS_branch:
         description: '固件分支 [可选]'
         default: '22.03'
+      compile_type:
+        description: '编译离型[customize][original]'
+        default: 'original'
       ssh:
         description: 'SSH connection to Actions'
         required: false
@@ -23,6 +26,8 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
+  DIY_P1_SH_CUSTOMIZE: diy-part1_customize.sh
+  DIY_P2_SH_CUSTOMIZE: diy-part2_customize.sh
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
@@ -117,6 +122,13 @@ jobs:
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
+    - name: 加载自定义脚本1
+      if: (github.event.inputs.compile_type == 'customize' && (github.event.inputs.compile_type != 'original')
+      run: |
+        chmod +x $DIY_P1_SH_CUSTOMIZE
+        cd $OPENWRT_PATH
+        $GITHUB_WORKSPACE/$DIY_P1_SH_CUSTOMIZE   
+
     - name: 更新 feeds
       run: |
         cd $OPENWRT_PATH 
@@ -131,6 +143,13 @@ jobs:
         chmod +x $DIY_P2_SH
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        
+    - name: 加载自定义脚本2
+      if: (github.event.inputs.compile_type == 'customize' && (github.event.inputs.compile_type != 'original')
+      run: |
+        chmod +x $DIY_P2_SH_CUSTOMIZE
+        cd $OPENWRT_PATH
+        $GITHUB_WORKSPACE/$DIY_P2_SH_CUSTOMIZE   
 
     - name: SSH 连接到 Actions
       uses: P3TERX/ssh2actions@v1.0.0
