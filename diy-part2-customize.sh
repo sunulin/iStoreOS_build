@@ -45,14 +45,15 @@ sed -i 's/ +libopenssl-legacy//g' feeds/small/shadowsocksr-libev/Makefile
 # wget -P feeds/passwall_packages/shadowsocks-rust https://github.com/wekingchen/my-file/raw/master/shadowsocks-rust/Makefile
 
 # 替换glib2
-echo "替换glib2"
+echo "替换glib2..."
 mkdir lede
 git clone https://github.com/coolsnowwolf/packages -b master lede
 cp -rf lede/libs/{glib2,pcre2} feeds/packages/libs/
 rm -rf lede
 
-# 替换prometheus-node
-mkdir lede
+# 替换prometheus-node库
+echo "替换prometheus库..."
+mkdir openwrt-packages
 git clone https://github.com/coolsnowwolf/packages -b openwrt-23.05 openwrt-packages
 cp -rf openwrt-packages/utils/{prometheus*} feeds/packages/utils/
 rm -rf openwrt-packages
