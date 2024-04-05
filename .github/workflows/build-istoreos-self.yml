@@ -8,7 +8,7 @@ on:
         description: '固件分支 [可选]'
         default: '22.03'
       compile_type:
-        description: '编译离型[customize][original]'
+        description: '编译类型[customize][original]'
         default: 'original'
       ssh:
         description: 'SSH connection to Actions'
