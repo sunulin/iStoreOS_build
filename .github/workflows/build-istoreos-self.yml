@@ -26,8 +26,8 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  DIY_P1_SH_CUSTOMIZE: diy-part1_customize.sh
-  DIY_P2_SH_CUSTOMIZE: diy-part2_customize.sh
+  DIY_P1_SH_CUSTOMIZE: diy-part1-customize.sh
+  DIY_P2_SH_CUSTOMIZE: diy-part2-customize.sh
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
