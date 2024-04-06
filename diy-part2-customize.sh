@@ -53,10 +53,14 @@ rm -rf lede
 
 # 替换prometheus-node库
 echo "替换prometheus库..."
-mkdir istoreos-22.03-packages
-git clone https://github.com/jjm2473/packages -b istoreos-22.03 istoreos-22.03-packages
-cp -rf istoreos-22.03-packages/utils/prometheus-node-exporter-lua feeds/packages/utils/
-rm -rf istoreos-22.03-packages
+#mkdir istoreos-22.03-packages
+#git clone https://github.com/jjm2473/packages -b istoreos-22.03 istoreos-22.03-packages
+#cp -rf istoreos-22.03-packages/utils/prometheus-node-exporter-lua feeds/packages/utils/
+#rm -rf istoreos-22.03-packages
+mkdir op-packages
+git clone https://github.com/openwrt/packages -b openwrt-23.05 op-packages
+cp -f op-packages/utils/prometheus-node-exporter-lua feeds/packages/utils/
+rm -rf op-packages
 
 echo "
 # 科学上网-passwall
