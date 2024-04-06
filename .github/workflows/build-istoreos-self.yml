@@ -1,4 +1,4 @@
-name: 构建iStoreOS-test
+name: 构建iStoreOS
 
 on:
   repository_dispatch:
