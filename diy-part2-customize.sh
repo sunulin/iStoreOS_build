@@ -55,7 +55,7 @@ rm -rf lede
 echo "替换prometheus库..."
 mkdir istoreos-22.03-packages
 git clone https://github.com/jjm2473/packages -b istoreos-22.03 istoreos-22.03-packages
-cp -rf istoreos-22.03/utils/prometheus-node-exporter-lua feeds/packages/utils/prometheus-node-exporter-lua
+cp -rf istoreos-22.03-packages/utils/prometheus-node-exporter-lua feeds/packages/utils/
 rm -rf istoreos-22.03-packages
 
 echo "
