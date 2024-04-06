@@ -9,7 +9,7 @@ on:
         default: '22.03'
       compile_type:
         description: '编译类型[customize][original]'
-        default: 'original'
+        default: 'customize'
       ssh:
         description: 'SSH connection to Actions'
         required: false
